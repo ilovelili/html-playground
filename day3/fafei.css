@@ -1,0 +1,39 @@
+h5 {
+  color: yellowgreen;
+  margin-top: 100px;
+  border: 2px dashed royalblue;
+  font-size: 24pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#fafei {
+  color: tomato !important;
+}
+
+#fafei-table-1 {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color: darkgrey;
+}
+
+#fafei-table-1 td,
+#fafei-table-1 th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#fafei-table-1 tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#fafei-table-1 tr:hover {
+  background-color: #ddd;
+}
+
+#fafei-table-1 th {
+  padding: 12px 0 12px 0;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
