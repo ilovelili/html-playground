@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <title>iRock - The Virtual Pet Rock</title>
+  <style>
+    .top_100 {
+      margin-top: 100px;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    function touchRock() {
+      greet(prompt("what's your name?"));
+    }
+
+    function greet(userName) {
+      if (userName) {
+        alert(`Hello ${userName}, I am your pet rock!`);
+      } else {
+        alert(`Hello huhu, I am your pet rock!`);
+      }
+    }
+  </script>
+</head>
+
+<body onload="greet()">
+  <div class="top_100">
+    <img id="rockImg" src="https://media.timeout.com/images/105641295/image.jpg" alt="iRock" onclick="touchRock()" />
+  </div>
+</body>
+<footer class="top_100">
+  ©️XiaoMenEr 2022. All rights reserved
+</footer>
+
+</html>
