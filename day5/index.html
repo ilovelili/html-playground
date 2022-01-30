@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <title>Duncan's Just-In-Time Donuts</title>
+  <script type="text/javascript">
+    const tax_rate = 0.1;
+    
+    var total_price_without_tax;
+    var total_price_with_tax;
+    var cake_donut_count;
+    var glazed_donut_count;
+
+    
+    function updateOrder() {
+      const cake_donut_price = 1;
+      const glazed_donut_price = 2;
+
+      cake_donut_count = document.getElementById('cakedonuts').value;
+      glazed_donut_count = document.getElementById('glazeddonuts').value;
+
+      total_price_without_tax = cake_donut_count * cake_donut_price + glazed_donut_count * glazed_donut_price;
+      total_price_with_tax = total_price_without_tax * (1 + tax_rate)
+    }
+
+    function placeOrder() {
+      var result = document.getElementById('result');
+      result.innerHTML = `
+      <p>You ordered <b style="color:green">${cake_donut_count}</b> cake donuts, <b>${glazed_donut_count}</b> glazed donuts</p>
+      <p>Price: <b style="color:blue">${total_price_without_tax}</b></p>
+      <p>Tax: <b>${total_price_without_tax * tax_rate}</b></p>
+      <p>Total: <b>${parseInt(total_price_with_tax)}</b></p>
+      <p>祝您全家福贵！！！</p>
+      `
+    }
+  </script>
+</head>
+
+<body>
+  <div id="frame">
+    <form name="orderform" action="donuts.php" method="POST">
+      <div class="field">
+        # of cake donuts: <input type="text" id="cakedonuts" name="cakedonuts" value="" onchange="updateOrder();" />
+      </div>
+      <div class="field">
+        # of glazed donuts: <input type="text" id="glazeddonuts" name="glazeddonuts" value=""
+          onchange="updateOrder();" />
+      </div>
+      <div class="field">
+        <input type="button" value="Place Order" onclick="placeOrder(this.form);" />
+      </div>
+
+      <div id="result"></div>
+    </form>
+  </div>
+</body
